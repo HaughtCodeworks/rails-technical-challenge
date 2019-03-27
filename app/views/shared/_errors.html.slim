@@ -2,7 +2,7 @@
   .alert.alert-danger
     h2
       = pluralize(model.errors.count, 'error ')
-      'prohibited this field_trip from being saved:
+      'prohibited this #{model.class.model_name.human} from being saved:
 
     ul
     - model.errors.full_messages.each do |message| 
