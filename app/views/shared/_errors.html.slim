@@ -1,0 +1,9 @@
+- if model.errors.any?
+  .alert.alert-danger
+    h2
+      = pluralize(model.errors.count, 'error ')
+      'prohibited this field_trip from being saved:
+
+    ul
+    - model.errors.full_messages.each do |message| 
+      li= message

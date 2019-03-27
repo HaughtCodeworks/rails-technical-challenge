@@ -1,0 +1,9 @@
+= form_with(model: field_trip, local: true) do |form|
+  = render partial: 'shared/errors', locals: { model: field_trip }
+
+  .form-group
+    = form.label :name
+    = form.text_field :name, class: 'form-control'
+
+  .actions
+    = form.submit
