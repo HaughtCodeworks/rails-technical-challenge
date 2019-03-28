@@ -1,13 +1,34 @@
 doctype html
-html
+html lang='en'
   head
     title HCW RailsTechnicalChallenge
+    meta charset='utf-8'
     meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'
     = stylesheet_link_tag 'application', media: 'all'
     = csrf_meta_tags
     = csp_meta_tag
 
   body
-    .container
-      = yield
+    #app.container
+      nav.navbar.navbar-expand-lg
+        = link_to 'Challenge Instructions', page_path(id: :instructions), class: 'navbar-brand'
+        ul.navbar-nav
+          li.nav-item= link_to 'Field Trips', field_trips_path, class: 'nav-link'
+          li.nav-item= link_to 'Students', students_path, class: 'nav-link'
+
+      main.border-top.p-3
+        - if notice.present?
+          p.alert.alert-info= notice
+
+        = yield
+
+      footer.row.border-top.pt-4.mt-5.text-center.font-weight-light
+        section.col-sm
+          span
+            'This project is licensed under the
+            = link_to('MIT license', 'https://opensource.org/licenses/MIT', target: '_blank')
+            '.
+        section.col-sm
+          span Made with love by Haught Codeworks.
+
     = javascript_include_tag 'application'

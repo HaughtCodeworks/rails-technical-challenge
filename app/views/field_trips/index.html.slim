@@ -1,0 +1,19 @@
+.row
+  .col
+    h1 Field Trips
+  .col.text-right
+    = link_to '+ New Field Trip', new_field_trip_path, class: 'btn btn-success'
+
+table.table
+  thead
+    tr
+      th Field Trip Name
+      th colspan=3
+
+  tbody
+    - @field_trips.each do |field_trip|
+      tr
+        td= field_trip.name
+        td= link_to 'Show', field_trip
+        td= link_to 'Edit', edit_field_trip_path(field_trip)
+        td= link_to 'Destroy', field_trip, method: :delete, data: { confirm: 'Are you sure?' }

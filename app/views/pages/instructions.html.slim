@@ -1,17 +1,39 @@
 article
   h1 Instructions
-  h3 The client has requested a new feature...
-  blockquote
-    em
-      'Feature: I can prompt a Parent to collect a Permission Slip
+  hr
 
-      'When I visit a Field Trip's detail page
-      'And I click a button to "Add Students"
-      'Then I should see a form to add Students, along with Guardian email addresses to the Field Trip
-      'When I have selected all the Students that I want to add to the trip
-      'And I have provided a Guardian email address for each Student
-      'Then each Guardian should receive an email with a link to approve their Student's attendance
-      'When the Parent clicks the link in the email, the Student's attendance should be marked as approved
+  h4 The client has requested a new feature:
+  blockquote
+    p
+      b
+        'Feature: I can save emergency contact information for a Field Trip:
+    em
+      'When I visit a Field Trip's detail page,
+      br
+      'And I click a button to "Add Students",
+      br
+      'Then I should see a form to assign Students
+      br
+      'And the form should collect Guardian name, email & emergency contact info
+      'for each Student.
+      br
+      'And the form should collect Guardian name, email & emergency contact info
+      br
+      'When I have selected all the Students that I want to add to the trip,
+      br
+      'And I have provided a Guardian email address for each Student,
+      br
+      'Then I should be on the Field Trip detail page,
+      br
+      'And I should see emergency contact info for all the Students,
+      br
+      'When I add a Student to a Field Trip without emergency contact info,
+      br
+      'Then I should see an error message showing that the Field Trip is invalid
+
   p
     'Follow established patterns to add the new feature. Maintain the 100% test
     'coverage established in the repo.
+  p
+    'Make sure that `rake db:seed` and `./bin/setup` still work for future
+    'maintainers.

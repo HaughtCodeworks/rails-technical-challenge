@@ -1,6 +1,6 @@
 - if model.errors.any?
   .alert.alert-danger
-    h2
+    p.font-weight-bold
       = pluralize(model.errors.count, 'error ')
       'prohibited this #{model.class.model_name.human} from being saved:
 

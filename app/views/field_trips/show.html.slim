@@ -1,0 +1,6 @@
+p
+  strong Field Trip Name:&nbsp;
+  = @field_trip.name
+
+= link_to 'Edit', edit_field_trip_path(@field_trip), class: 'btn btn-info'
+= link_to 'Back', field_trips_path, class: 'btn btn-light'
